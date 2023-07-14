@@ -1,11 +1,12 @@
 name: Test workflows
-run-name: Triggering test by ${{ github.actor }}
+run-name: Triggering test ${{ github.actor }}
 
 on:
   push:
     branches: [main, develop]
   pull_request:
     branches: [main]
+  workflow_call:
 
 jobs:
   test:
