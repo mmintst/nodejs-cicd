@@ -1,0 +1,17 @@
+services:
+  mongodb:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: academy
+      MONGO_INITDB_ROOT_PASSWORD: secret
+
+  app:
+    # Build image nodeserver from Dockerfile in GitHub repo
+    image: nodeserver
+    build: https://github.com/CleverseAcademy/nodejs-cicd.git#develop
+    environment:
+      MONGODB_USERNAME: academy
+      MONGODB_PASSWORD: secret
+      MONGODB_HOST: academymg
+    ports:
+      - "8081:8081"
