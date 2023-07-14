@@ -8,7 +8,7 @@ on:
 jobs:
   test:
     name: Running test workflow
-    uses: ./.github/workflows/test.yaml
+    uses: ./.github/workflows/demo.yaml
 
   docker:
     needs: test
